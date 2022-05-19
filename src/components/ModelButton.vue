@@ -26,7 +26,7 @@ export default {
 </template>
 
 <style scoped>
-.modal {
+.model {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -39,7 +39,7 @@ export default {
 	justify-content: center;
 }
 
-.modal div {
+.model div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;

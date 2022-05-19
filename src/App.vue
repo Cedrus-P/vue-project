@@ -70,7 +70,7 @@ function useCounter() {
 		<!-- <p>{{ msg2 }}</p> -->
 		
 		<!-- composition -->
-		<Composition></Composition>
+		<!-- <Composition></Composition> -->
 
 		<!-- Teleport: ModalButton -->
 		<ModelButton></ModelButton>
