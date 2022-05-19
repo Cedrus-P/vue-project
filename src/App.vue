@@ -10,7 +10,6 @@ import {
 	watch
 } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 
 export default {
 	components: {
@@ -64,7 +63,6 @@ function useCounter() {
 	<header></header>
 
 	<main>
-		<!-- <TheWelcome /> -->
 		<p ref="desc"></p>
 		<p>{{ doubleCounter }}</p>
 		<p>{{ counter }}</p>
