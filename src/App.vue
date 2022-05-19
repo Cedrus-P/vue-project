@@ -10,12 +10,13 @@ import {
 	watch
 } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import ModelButton from './components/ModelButton.vue'
 
 export default {
 	components: {
-		HelloWorld,
-		TheWelcome
-	},
+    HelloWorld,
+    ModelButton
+},
 	props: {
 		msg: String
 	},
@@ -50,7 +51,6 @@ function useCounter() {
 			data.counter++
 		}, 1000)
 	})
-
 	onUnmounted(() => {
 		clearInterval(timer)
 	})
@@ -63,11 +63,17 @@ function useCounter() {
 	<header></header>
 
 	<main>
+		<!-- 第一课 -->
 		<p ref="desc"></p>
 		<p>{{ doubleCounter }}</p>
 		<p>{{ counter }}</p>
-		<p>{{ msg2 }}</p>
+		<!-- <p>{{ msg2 }}</p> -->
 		
+		<!-- composition -->
+		<Composition></Composition>
+
+		<!-- Teleport: ModalButton -->
+		<ModelButton></ModelButton>
 	</main>
 </template>
 
