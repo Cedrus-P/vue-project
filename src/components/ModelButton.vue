@@ -13,7 +13,6 @@ export default {
 <template>
 	<div>
 		<button @click="modelOpen = true">弹出一个模态窗口</button>
-
 		<teleport to="body">
 			<div v-if="modelOpen" class="model">
 				<div>

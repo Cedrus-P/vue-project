@@ -9,16 +9,21 @@ import {
 	toRefs,
 	watch
 } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
 import ModelButton from './components/ModelButton.vue'
+import Emits from './components/Emits.vue'
 
 export default {
 	components: {
-    HelloWorld,
-    ModelButton
-},
+		ModelButton,
+		Emits
+	},
 	props: {
 		msg: String
+	},
+	methods: {
+		onClick() {
+			console.log('click me')
+		}
 	},
 	setup() {
 		const { counter, doubleCounter } = useCounter()
@@ -27,13 +32,10 @@ export default {
 		const desc = ref(null)
 
 		// 侦听器
-		watch(
-			counter,
-			(val, oldValue) => {
-				const p = desc.value
-				p.textContent = `counter change from ${oldValue} to ${val}`
-			}
-		)
+		watch(counter, (val, oldValue) => {
+			const p = desc.value
+			p.textContent = `counter change from ${oldValue} to ${val}`
+		})
 
 		const msg2 = ref('some message')
 		return { counter, doubleCounter, msg2, desc }
@@ -68,12 +70,15 @@ function useCounter() {
 		<p>{{ doubleCounter }}</p>
 		<p>{{ counter }}</p>
 		<!-- <p>{{ msg2 }}</p> -->
-		
+
 		<!-- composition -->
 		<!-- <Composition></Composition> -->
 
 		<!-- Teleport: ModalButton -->
 		<ModelButton></ModelButton>
+
+		<!-- Emits -->
+		<Emits @my-click="onClick"></Emits>
 	</main>
 </template>
 
