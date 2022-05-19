@@ -1,5 +1,14 @@
 <script>
-import { reactive, computed, onMounted, onUnmounted, ref, toRef , toRefs} from 'vue'
+import {
+	reactive,
+	computed,
+	onMounted,
+	onUnmounted,
+	ref,
+	toRef,
+	toRefs,
+	watch
+} from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 
@@ -13,16 +22,21 @@ export default {
 	},
 	setup() {
 		const { counter, doubleCounter } = useCounter()
-		let people = reactive({
-			name: 'mike',
-			age: 20
-		})
-		let people1 = toRefs(people)
-		console.log('people.name: ' + people.name)
-		console.log('people1: ' + people1.name.value)
-		
+
+		// 使用元素引用
+		const desc = ref(null)
+
+		// 侦听器
+		watch(
+			counter,
+			(val, oldValue) => {
+				const p = desc.value
+				p.textContent = `counter change from ${oldValue} to ${val}`
+			}
+		)
+
 		const msg2 = ref('some message')
-		return { counter, doubleCounter, msg2 }
+		return { counter, doubleCounter, msg2, desc }
 	}
 }
 function useCounter() {
@@ -51,8 +65,11 @@ function useCounter() {
 
 	<main>
 		<!-- <TheWelcome /> -->
+		<p ref="desc"></p>
 		<p>{{ doubleCounter }}</p>
 		<p>{{ counter }}</p>
+		<p>{{ msg2 }}</p>
+		
 	</main>
 </template>
 
