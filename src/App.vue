@@ -12,12 +12,14 @@ import {
 import ModelButton from './components/ModelButton.vue'
 import Emits from './components/Emits.vue'
 import Emits1 from './components/Emits.vue'
+import VmodelTest from './components/VmodelTest.vue'
 
 export default {
 	components: {
     ModelButton,
     Emits,
-    Emits1
+    Emits1,
+    VmodelTest
 },
 	props: {
 		msg: String
@@ -84,7 +86,10 @@ function useCounter() {
 
 		<!-- 实例方法定义组件 -->
 		<comp></comp>
-	</main>
+
+		<!-- v-model 的使用 -->
+		<VmodelTest></VmodelTest>
+</main>
 </template>
 
 <style>
