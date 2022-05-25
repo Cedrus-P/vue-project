@@ -11,12 +11,14 @@ import {
 } from 'vue'
 import ModelButton from './components/ModelButton.vue'
 import Emits from './components/Emits.vue'
+import Emits1 from './components/Emits.vue'
 
 export default {
 	components: {
-		ModelButton,
-		Emits
-	},
+    ModelButton,
+    Emits,
+    Emits1
+},
 	props: {
 		msg: String
 	},
@@ -79,6 +81,9 @@ function useCounter() {
 
 		<!-- Emits -->
 		<Emits @my-click="onClick"></Emits>
+
+		<!-- 实例方法定义组件 -->
+		<comp></comp>
 	</main>
 </template>
 
