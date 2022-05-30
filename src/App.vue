@@ -16,11 +16,11 @@ import VmodelTest from './components/VmodelTest.vue'
 
 export default {
 	components: {
-    ModelButton,
-    Emits,
-    Emits1,
-    VmodelTest
-},
+		ModelButton,
+		Emits,
+		Emits1,
+		VmodelTest
+	},
 	props: {
 		msg: String
 	},
@@ -89,7 +89,13 @@ function useCounter() {
 
 		<!-- v-model 的使用 -->
 		<VmodelTest></VmodelTest>
-</main>
+
+		<!-- is属性的使用 -->
+		<component is="comp"></component>
+		<table>
+			<tr v-is="'blog-post-row'"></tr>
+		</table>
+	</main>
 </template>
 
 <style>
