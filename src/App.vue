@@ -5,7 +5,6 @@ import {
 	onMounted,
 	onUnmounted,
 	ref,
-	toRef,
 	toRefs,
 	watch
 } from 'vue'
@@ -51,7 +50,6 @@ function useCounter() {
 		doubleCounter: computed(() => data.counter * 2)
 	})
 	let timer
-
 	onMounted(() => {
 		setInterval(() => {
 			data.counter++
@@ -60,7 +58,6 @@ function useCounter() {
 	onUnmounted(() => {
 		clearInterval(timer)
 	})
-	//
 	return toRefs(data)
 }
 </script>
