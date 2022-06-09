@@ -1,6 +1,6 @@
 # vue-project
 
-Vue3 learning porject.
+vue3新特性的使用.
 
 ## Project Setup
 
