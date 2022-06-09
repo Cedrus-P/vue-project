@@ -9,6 +9,12 @@ createApp(App)
 	}
 })
 .mount('#app')
+.directive('highlight', {
+  beforeMount(el, binding, vnode) {
+    el.style.background = binding.value
+  }
+})
+
 
 // 自定义渲染器
 const nodeOps = {

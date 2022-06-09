@@ -21,6 +21,7 @@ export default {
 				</div>
 			</div>
 		</teleport>
+		<p v-highlight="yellow">Highlight this text</p>
 	</div>
 </template>
 
