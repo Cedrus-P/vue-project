@@ -9,7 +9,7 @@ createApp(App)
 	}
 })
 .mount('#app')
-.directive('highlight', {
+App.directive('highlight', {
   beforeMount(el, binding, vnode) {
     el.style.background = binding.value
   }

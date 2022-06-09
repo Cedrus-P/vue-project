@@ -7,6 +7,7 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
+    "sass": "^1.52.3",
     "vue": "^3.2.33"
   },
   "devDependencies": {
